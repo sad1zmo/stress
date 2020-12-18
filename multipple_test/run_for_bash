@@ -1,7 +1,4 @@
-#!/bin/bash
 
-count = 50
-
-for i in {1..$count}; do
-    python3 /mnt/e/Avarage/stress_test/start_test.py &
+for i in {1..40}; do
+    python3 /home/administrator/stress/test/multipple_test/start_test.py &
   done

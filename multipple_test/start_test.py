@@ -1,5 +1,6 @@
 from random import randrange
 import logging
+import datetime as dt
 from ms.test_mnemoscheme import TestMnemoscheme
 from tl.test_tl import TestTl
 from pmm.test_pmm import TestPmm
@@ -13,7 +14,8 @@ class Start:
         self.tm = TestMnemoscheme(self.drv)
         self.pmm = TestPmm(self.drv)
         self.tl = TestTl(self.drv)
-        logging.basicConfig(filename='app.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%y %H:%M:%S')
+        self.time = dt.datetime.now().strftime("%d.%m.%Y")
+        logging.basicConfig(filename=f'./logs/{self.time}.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%y %H:%M:%S')
 
     def random_run(self):
         return randrange(3)
@@ -21,8 +23,8 @@ class Start:
     def run(self):
         dicts = {
             0: ['start_methods_pmm', self.pmm],
-            #1: ['start_methods_tm', self.tm],
-            #2: ['start_methods_tl', self.tl]
+            1: ['start_methods_tm', self.tm],
+            2: ['start_methods_tl', self.tl]
         }
 
         while True:

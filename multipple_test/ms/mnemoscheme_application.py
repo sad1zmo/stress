@@ -251,4 +251,5 @@ class MnemoschemeApplication:
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait + self.sel.big_wait} сек')
-
+        finally:
+            return

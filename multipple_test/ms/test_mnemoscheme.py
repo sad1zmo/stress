@@ -53,7 +53,6 @@ class TestMnemoscheme(MnemoschemeApplication):
                 methods_def.append(method)
         random_index = randrange(len(methods_def))
         method_name = methods_def[random_index]
-        print(f' {self}, {method_name} ')
         getattr(self, method_name)()
 
 

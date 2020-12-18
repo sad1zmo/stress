@@ -80,7 +80,6 @@ class PmmApplication:
 
     def setup_change_date(self):
         try:
-            print(self.setup_date_time())
             sleep(self.sel.random())
             # Находим поле для ввода начальной даты и времени
             element = self.sel.driver.find_element(By.CSS_SELECTOR, "#startDatePicker")
