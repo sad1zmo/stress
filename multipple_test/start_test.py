@@ -15,16 +15,13 @@ class Start:
         self.pmm = TestPmm(self.drv)
         self.tl = TestTl(self.drv)
         self.time = dt.datetime.now().strftime("%d.%m.%Y")
-        logging.basicConfig(filename=f'./logs/{self.time}.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%y %H:%M:%S')
-
-    def random_run(self):
-        return randrange(3)
+        logging.basicConfig(filename=f'./logs/{self.time}.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%Y %H:%M:%S')
 
     def run(self):
         dicts = {
-            0: ['start_methods_pmm', self.pmm],
-            1: ['start_methods_tm', self.tm],
-            2: ['start_methods_tl', self.tl]
+            #0: ['start_methods_pmm', self.pmm],
+            0: ['start_methods_tm', self.tm],
+            #2: ['start_methods_tl', self.tl]
         }
 
         while True:
@@ -34,6 +31,8 @@ class Start:
 
 st = Start()
 st.pmm.login()
+#st.tm.test_pmm_vidjet()
+
 st.run()
 
 

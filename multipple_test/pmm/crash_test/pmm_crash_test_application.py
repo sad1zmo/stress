@@ -5,11 +5,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
 import logging
 import inspect
 
-class PmmApplication:
+class CrashPmmApplication:
     def __init__(self, driver):
         self.sel = driver
 

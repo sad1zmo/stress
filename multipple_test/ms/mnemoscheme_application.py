@@ -2,6 +2,7 @@ from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from driver.css_selectors import *
 import logging
 import inspect
 
@@ -14,21 +15,21 @@ class MnemoschemeApplication:
         try:
             # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_b}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=AF150]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{af150}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape1-1 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{shape_1_1_text_result}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -37,23 +38,23 @@ class MnemoschemeApplication:
 
     def setup_150pi(self):
         try:
-            # Переходим по уровням и нажимаем PI150
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_a}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=PI150]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pi150}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape1-1 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{shape_1_1_text_result}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -62,23 +63,23 @@ class MnemoschemeApplication:
 
     def setup_30Smarttrand(self):
         try:
-            # Переходим по уровням и нажимаем SmartTrend
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_d}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=SmartTrend]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{smart_trend30}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "div[data-highcharts-chart='0']")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{smart30_result}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -87,23 +88,23 @@ class MnemoschemeApplication:
 
     def setup_150Smarttrand(self):
         try:
-            # Переходим по уровням и нажимаем Pi_smart
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_c}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Pi_smart]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pi_smart}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape1-1 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{shape_1_1_text_result}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -112,28 +113,23 @@ class MnemoschemeApplication:
 
     def setup_zonemaker(self):
         try:
-            # Переходим по уровням и нажимаем ZoneMaker_attach
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_a}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5]").click()
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=ZoneMaker_attach]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
+            sleep(self.sel.random())
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{zone_maker_attach}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape8-19 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{zone_and_button_result}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -143,9 +139,9 @@ class MnemoschemeApplication:
     def setup_button(self):
         try:
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=Button]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_button}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape8-19 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{zone_and_button_result}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -154,19 +150,19 @@ class MnemoschemeApplication:
 
     def setup_pmm_grid_control(self):
         try:
-            # Переходим по уровням и нажимаем PmmGridControl
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_b}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=PmmGridControl]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pmm_grid_control_result}").click()
             # Ожидаем элемент из мнемосхемы
             self.sel.driver.find_element(By.CSS_SELECTOR, ".pmmgridcontrol-body .pmmgc-row:nth-child(1) > g:nth-child(3) > text > tspan")
         except:
@@ -177,29 +173,24 @@ class MnemoschemeApplication:
 
     def setup_pmm_vidjet(self):
         try:
-            # Переходим по уровням и нажимаем PMM_Vidjet
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_a}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5]").click()
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=PMM_Vidjet]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
+            sleep(self.sel.random())
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pmm_vidjet}").click()
             # Ожидаем элемент из мнемосхемы
             WebDriverWait(self.sel.driver, self.sel.wait).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR,
-                                                                                                        "#shape1-1 text"), '0'))
+                                                                                                        f"{pmm_vidjet_result}"), '0'))
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -247,9 +238,10 @@ class MnemoschemeApplication:
     def setup_indusoft_button(self):
         try:
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, "h1.logo").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_indusoft_button}").click()
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait + self.sel.big_wait} сек')
         finally:
             return
+
