@@ -2,6 +2,7 @@ from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from driver.css_selectors import *
 import logging
 import inspect
 
@@ -14,241 +15,223 @@ class CrashMnemoschemeApplication:
         try:
             # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_b}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=AF150]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{af150}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape1-1 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{shape_1_1_text_result}")
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n.custom-menu-submenu li[data-path$=B];\n'
-                f'.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень1];\n.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень2];\n'
-                f'.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень3];\n.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень4];\n'
-                f'.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень5];\n.custom-menu-submenu li[data-path$=B] li[data-path$=AF150;\n'
-                f'#shape1-1 > text\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_b = {button_b};\nlevel1 = {level1};\nlevel2 = {level2};\nlevel3 = {level3};\n'
+                f'level4 = {level4};\nlevel5 = {level5};\naf150 = {af150};\n'
+                f'shape_1_1_text_result = {shape_1_1_text_result}\n')
         finally:
             return
 
     def setup_150pi(self):
         try:
-            # Переходим по уровням и нажимаем PI150
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_a}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A] li[data-path$=PI150]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pi150}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape1-1 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{shape_1_1_text_result}")
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n.custom-menu-submenu li[data-path$=A];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1];\n.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3];\n.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5];\n.custom-menu-submenu li[data-path$=A] li[data-path$=PI150;\n'
-                f'#shape1-1 > text\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_a = {button_a};\nlevel1 = {level1};\nlevel2 = {level2};\nlevel3 = {level3};\n'
+                f'level4 = {level4};\nlevel5 = {level5};\npi150 = {pi150};\n'
+                f'shape_1_1_text_result = {shape_1_1_text_result}\n')
         finally:
             return
 
     def setup_30Smarttrand(self):
         try:
-            # Переходим по уровням и нажимаем SmartTrend
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_d}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=D] li[data-path$=SmartTrend]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{smart_trend30}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "div[data-highcharts-chart='0']")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{smart30_result}")
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n.custom-menu-submenu li[data-path$=D];\n'
-                f'.custom-menu-submenu li[data-path$=D] li[data-path$=Уровень1];\n.custom-menu-submenu li[data-path$=D] li[data-path$=Уровень2];\n'
-                f'.custom-menu-submenu li[data-path$=D] li[data-path$=Уровень3];\n.custom-menu-submenu li[data-path$=D] li[data-path$=Уровень4];\n'
-                f'.custom-menu-submenu li[data-path$=D] li[data-path$=Уровень5];\n.custom-menu-submenu li[data-path$=D] li[data-path$=SmartTrend];\n'
-                f'div[data-highcharts-chart="0"]\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_d = {button_d};\nlevel1 = {level1};\nlevel2 = {level2};\nlevel3 = {level3};\n'
+                f'level4 = {level4};\nlevel5 = {level5};\nsmart_trend30 = {smart_trend30};\n'
+                f'smart30_result = {smart30_result}\n')
         finally:
             return
 
     def setup_150Smarttrand(self):
         try:
-            # Переходим по уровням и нажимаем Pi_smart
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_c}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Уровень5]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=C] li[data-path$=Pi_smart]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pi_smart}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape1-1 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{shape_1_1_text_result}")
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n.custom-menu-submenu li[data-path$=D];\n'
-                f'.custom-menu-submenu li[data-path$=C] li[data-path$=Уровень1];\n.custom-menu-submenu li[data-path$=C] li[data-path$=Уровень2];\n'
-                f'.custom-menu-submenu li[data-path$=C] li[data-path$=Уровень3];\n.custom-menu-submenu li[data-path$=C] li[data-path$=Уровень4];\n'
-                f'.custom-menu-submenu li[data-path$=C] li[data-path$=Уровень5];\n.custom-menu-submenu li[data-path$=C] li[data-path$=Pi_smart];\n'
-                f'#shape1-1 > text\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_c = {button_c};\nlevel1 = {level1};\nlevel2 = {level2};\nlevel3 = {level3};\n'
+                f'level4 = {level4};\nlevel5 = {level5};\npi_smart = {pi_smart};\n'
+                f'shape_1_1_text_result = {shape_1_1_text_result}\n')
         finally:
             return
 
     def setup_zonemaker(self):
         try:
-            # Переходим по уровням и нажимаем ZoneMaker_attach
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_a}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5]").click()
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=ZoneMaker_attach]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
+            sleep(self.sel.random())
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{zone_maker_attach}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape8-19 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{zone_and_button_result}")
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n.custom-menu-submenu li[data-path$=A];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1];\n.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3];\n.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5];\n.custom-menu-submenu li[data-path$=A] li[data-path$=ZoneMaker_attach;\n'
-                f'#shape8-19 > text\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_a = {button_a};\nlevel1 = {level1};\nlevel2 = {level2};\nlevel3 = {level3};\n'
+                f'level4 = {level4};\nlevel5 = {level5};\nzone_maker_attach = {zone_maker_attach};\n'
+                f'zone_and_button_result = {zone_and_button_result}\n')
         finally:
             return
 
     def setup_button(self):
         try:
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=Button]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_button}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#shape8-19 > text")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{zone_and_button_result}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
-                f'.custom-menu-submenu li[data-path$=Button];\n'
-                f'#shape8-19 > text\n')
+                f'button_button = {button_button};\nzone_and_button_result= {zone_and_button_result}')
         finally:
             return
 
     def setup_pmm_grid_control(self):
         try:
-            # Переходим по уровням и нажимаем PmmGridControl
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_b}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=B] li[data-path$=PmmGridControl]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pmm_grid_control}").click()
             # Ожидаем элемент из мнемосхемы
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".pmmgridcontrol-body .pmmgc-row:nth-child(1) > g:nth-child(3) > text > tspan")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pmm_grid_control_result}")
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n.custom-menu-submenu li[data-path$=B];\n'
-                f'.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень1];\n.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень2];\n'
-                f'.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень3];\n.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень4];\n'
-                f'.custom-menu-submenu li[data-path$=B] li[data-path$=Уровень5];\n.custom-menu-submenu li[data-path$=B] li[data-path$=PmmGridControl;\n'
-                f'.pmmgridcontrol-body .pmmgc-row:nth-child(1) > g:nth-child(3) > text > tspan\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_b = {button_b};\nlevel1 = {level1};\nlevel2 = {level2};\nlevel3 = {level3};\n'
+                f'level4 = {level4};\npmm_grid_control = {pmm_grid_control};\n'
+                f'pmm_grid_control_result = {pmm_grid_control_result}\n')
         finally:
             return
 
     def setup_pmm_vidjet(self):
         try:
-            # Переходим по уровням и нажимаем PMM_Vidjet
+            # Переходим по уровням и нажимаем AF150
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=A]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_a}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level1}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level2}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level3}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5]").click()
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                         ".custom-menu-submenu li[data-path$=A] li[data-path$=PMM_Vidjet]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{level5}").click()
+            sleep(self.sel.random())
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pmm_vidjet}").click()
             # Ожидаем элемент из мнемосхемы
             WebDriverWait(self.sel.driver, self.sel.wait).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR,
-                                                                                                        "#shape1-1 text"), '0'))
+                                                                                                        f"{pmm_vidjet_result}"), '0'))
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n.custom-menu-submenu li[data-path$=A];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень1];\n.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень2];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень3];\n.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень4];\n'
-                f'.custom-menu-submenu li[data-path$=A] li[data-path$=Уровень5];\n.custom-menu-submenu li[data-path$=A] li[data-path$=PMM_Vidjet;\n'
-                f'#shape1-1 text\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_a = {button_a};\nlevel1 = {level1};\nlevel2 = {level2};\nlevel3 = {level3};\n'
+                f'level4 = {level4};\nlevel5 = {level5};\npmm_vidjet = {pmm_vidjet};\n'
+                f'pmm_vidjet_result = {pmm_vidjet_result}\n')
         finally:
             return
 
     def setup_login(self, log, passwd):
         try:
             # Проверяем находимся ли мы на странице логина
-            if self.sel.driver.find_elements(By.CSS_SELECTOR, '.login-block'):
+            if self.sel.driver.find_elements(By.CSS_SELECTOR, f"{login_block}"):
                 sleep(self.sel.random())
                 # Вводим логин
-                self.sel.driver.find_element(By.CSS_SELECTOR, "#txtUserName").send_keys(log)
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{user_name}").send_keys(log)
                 sleep(self.sel.random())
                 # Вводим пароль
-                self.sel.driver.find_element(By.CSS_SELECTOR, "#txtPassword").send_keys(passwd)
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{user_password}").send_keys(passwd)
                 sleep(self.sel.random())
                 # Жмем на кнопку войти
-                self.sel.driver.find_element(By.CSS_SELECTOR, ".btn-login").click()
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_login}").click()
             else:
                 return
         except:
@@ -257,14 +240,13 @@ class CrashMnemoschemeApplication:
         finally:
             return
 
-
     def setup_indusoft_button(self):
         try:
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, "h1.logo").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_indusoft_button}").click()
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\nh1.logo\n')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'button_indusoft_button = {button_indusoft_button}\n')
         finally:
             return
-

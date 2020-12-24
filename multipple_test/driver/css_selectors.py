@@ -1,3 +1,11 @@
+# Логин блок
+# --------------------------------------------------------
+
+login_block = '.login-block'
+user_name = '#txtUserName'
+user_password = '#txtPassword'
+button_login = '.btn-login'
+
 # Мнемосхемы
 # ---------------------------------------------------------
 
@@ -23,6 +31,7 @@ smart_trend30 = '.custom-menu-submenu li[data-path$=SmartTrend]'
 pi_smart = '.custom-menu-submenu li[data-path$=Pi_smart]'
 zone_maker_attach = '.custom-menu-submenu li[data-path$=ZoneMaker_attach]'
 pmm_vidjet = '.custom-menu-submenu li[data-path$=PMM_Vidjet]'
+pmm_grid_control = '.custom-menu-submenu li[data-path$=PmmGridControl]'
 
 
 # Элемент из таблицы 150 элементов
@@ -35,7 +44,7 @@ smart30_result = 'div[data-highcharts-chart="0"]'
 zone_and_button_result = '#shape8-19 > text'
 
 # Загрузка элемента из PmmGridControl
-pmm_grid_control_result = '.custom-menu-submenu li[data-path$=PmmGridControl]'
+pmm_grid_control_result = '.pmmgridcontrol-body .pmmgc-row:nth-child(1) > g:nth-child(3) > text > tspan'
 
 # Загрузка элементов PmmVidjet
 pmm_vidjet_result = '#shape1-1 text'

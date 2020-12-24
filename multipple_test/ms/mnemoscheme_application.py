@@ -162,7 +162,7 @@ class MnemoschemeApplication:
             sleep(self.sel.random())
             self.sel.driver.find_element(By.CSS_SELECTOR, f"{level4}").click()
             sleep(self.sel.random())
-            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pmm_grid_control_result}").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{pmm_grid_control}").click()
             # Ожидаем элемент из мнемосхемы
             self.sel.driver.find_element(By.CSS_SELECTOR, ".pmmgridcontrol-body .pmmgc-row:nth-child(1) > g:nth-child(3) > text > tspan")
         except:
@@ -200,16 +200,16 @@ class MnemoschemeApplication:
     def setup_login(self, log, passwd):
         try:
             # Проверяем находимся ли мы на странице логина
-            if self.sel.driver.find_elements(By.CSS_SELECTOR, '.login-block'):
+            if self.sel.driver.find_elements(By.CSS_SELECTOR, f"{login_block}"):
                 sleep(self.sel.random())
                 # Вводим логин
-                self.sel.driver.find_element(By.CSS_SELECTOR, "#txtUserName").send_keys(log)
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{user_name}").send_keys(log)
                 sleep(self.sel.random())
                 # Вводим пароль
-                self.sel.driver.find_element(By.CSS_SELECTOR, "#txtPassword").send_keys(passwd)
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{user_password}").send_keys(passwd)
                 sleep(self.sel.random())
                 # Жмем на кнопку войти
-                self.sel.driver.find_element(By.CSS_SELECTOR, ".btn-login").click()
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_login}").click()
             else:
                 return
         except:

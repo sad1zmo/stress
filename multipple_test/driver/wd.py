@@ -17,7 +17,7 @@ class SelDrv:
         self.driver = webdriver.Remote(
             command_executor="http://localhost:4444/wd/hub",
             desired_capabilities=self.capabilities)
-        self.wait = 5
+        self.wait = 30
         self.big_wait = 120
         # self.driver = webdriver.Chrome()
         self.driver.maximize_window()
@@ -26,4 +26,4 @@ class SelDrv:
         self.driver.get("http://192.168.35.98:8093/")
 
     def random(self):
-        return randrange(1, 2)
+        return randrange(2, 5)
