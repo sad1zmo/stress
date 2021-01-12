@@ -5,6 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from driver.css_selectors import *
 import logging
 import inspect
 
@@ -21,9 +22,9 @@ class TlApplication:
         try:
             sleep(self.sel.random())
             # Находим кнопку TL и нажимаем
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".custom-menu-submenu li[data-path$=TL]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_tl}").click()
             # Проверяем появился ли чекбокс в верхней панели для дальнейших действий
-            self.sel.driver.find_element(By.CSS_SELECTOR, "th.k-header>.checkbox-wrap.small")
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{checkbox_wrap}")
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -35,7 +36,7 @@ class TlApplication:
             sleep(self.sel.random())
             # Ожидаем пока появится таблица в TL
             WebDriverWait(self.sel.driver, self.sel.wait).until(EC.visibility_of_element_located((By.CSS_SELECTOR,
-                                                                                                    ".k-virtual-scrollable-wrap table")))
+                                                                                                  f"{tl_open_table}")))
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -46,29 +47,29 @@ class TlApplication:
         try:
             sleep(self.sel.random())
             # Нажимаем на кнопку Создать событие
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#addEventBtnId").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{add_events_button}").click()
             sleep(self.sel.random())
             # Нажимаем на кнопку Простой оборудования
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".elem.ng-scope>a").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{downtime_button}").click()
             sleep(self.sel.random())
             # Ожидаем экран загрузки
             WebDriverWait(self.sel.driver, self.sel.wait).until(EC.invisibility_of_element_located((By.CSS_SELECTOR,
-                                                                                                        ".big-loader")))
+                                                                                                    f"{big_loader}")))
             # В открывшемся окне жмем ВЫБРАТЬ...
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#subdivivsion input[type=button]").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_event_select_button}").click()
             sleep(self.sel.random())
             # Ставим галочку напротив НПП
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".k-top.k-top.ng-scope .k-in label>span").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{npp_checkbox}").click()
             sleep(self.sel.random())
             # Нажимаем кнопку Выбрать
-            self.sel.driver.find_element(By.CSS_SELECTOR, "span[ng-click='closeWindowSelect()']").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_close_window_select}").click()
             sleep(self.sel.random())
             # Нажимаем кнопку Сохранить и закрыть
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".ui-button-text[ng-click*='saveAndCloseEvent()']").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_save_button}").click()
             sleep(self.sel.random())
             # Ожидаем экран загрузки
             WebDriverWait(self.sel.driver, self.sel.wait).until(EC.invisibility_of_element_located((By.CSS_SELECTOR,
-                                                                                                    ".big-loader")))
+                                                                                                    f"{big_loader}")))
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -79,16 +80,16 @@ class TlApplication:
         try:
             sleep(self.sel.random())
             # Находим элемент в таблице
-            element = self.sel.driver.find_element(By.CSS_SELECTOR, ".k-virtual-scrollable-wrap table> tbody > tr:nth-child(1) > td:nth-child(1)")
+            element = self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_table_element}")
             # Нажимаем на элемент в таблице
             actions = ActionChains(self.sel.driver)
             actions.click(element).double_click(element).perform()
             # Ожидаем экран загрузки
             WebDriverWait(self.sel.driver, self.sel.wait).until(EC.invisibility_of_element_located((By.CSS_SELECTOR,
-                                                                                                    ".big-loader")))
+                                                                                                    f"{big_loader}")))
             sleep(self.sel.random())
             # Жмем на кнопку закрыть
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".ui-button-text[ng-click='closeWindow($event)']").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_close_window_element}").click()
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -100,12 +101,12 @@ class TlApplication:
             actions = ActionChains(self.sel.driver)
             sleep(self.sel.random())
             # Нажимаем на кнопку Использование временного диапазона
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#isDateFilterAvaibleId").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_date_filter}").click()
             sleep(self.sel.random())
-            element = self.sel.driver.find_element(By.CSS_SELECTOR, "#trend-settings-time-from")
+            element = self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_time_from_field}")
             actions.click(element).send_keys(Keys.BACK_SPACE).send_keys('*-1Y')
             # Находим кнопку "Галочка"
-            button = self.sel.driver.find_element(By.CSS_SELECTOR, "#applyDateTimeBtnId")
+            button = self.sel.driver.find_element(By.CSS_SELECTOR, f"{tl_apply_date_time}")
             # Нажимаем галочку применить
             actions.click(button).double_click(button).perform()
         except:
@@ -118,8 +119,7 @@ class TlApplication:
         try:
             sleep(self.sel.random())
             # Нажимаем на НПП в меню слева
-            self.sel.driver.find_element(By.CSS_SELECTOR,
-                                             "#atp-treelist ul:nth-child(1) > li:nth-child(1)>div").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{npp_button}").click()
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
@@ -129,16 +129,16 @@ class TlApplication:
     def setup_login(self, log, passwd):
         try:
             # Проверяем находимся ли мы на странице логина
-            if self.sel.driver.find_elements(By.CSS_SELECTOR, '.login-block'):
+            if self.sel.driver.find_elements(By.CSS_SELECTOR, f"{login_block}"):
                 sleep(self.sel.random())
                 # Вводим логин
-                self.sel.driver.find_element(By.CSS_SELECTOR, "#txtUserName").send_keys(log)
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{user_name}").send_keys(log)
                 sleep(self.sel.random())
                 # Вводим пароль
-                self.sel.driver.find_element(By.CSS_SELECTOR, "#txtPassword").send_keys(passwd)
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{user_password}").send_keys(passwd)
                 sleep(self.sel.random())
                 # Жмем на кнопку войти
-                self.sel.driver.find_element(By.CSS_SELECTOR, ".btn-login").click()
+                self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_login}").click()
             else:
                 return
         except:
@@ -152,12 +152,12 @@ class TlApplication:
             sleep(self.sel.random())
             # Ожидаем доступность кнопок после Экрана загрузки
             WebDriverWait(self.sel.driver, self.sel.big_wait).until(EC.invisibility_of_element_located((By.CSS_SELECTOR,
-                                                                                                        ".big-loader")))
+                                                                                                        f"{big_loader}")))
             # Нажимаем на кнопку "Список возможностей" в верхнем меню
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".profile").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_profile}").click()
             sleep(self.sel.random())
             # Жмем на кнопку завершить сеанс
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#logoutForm").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_logout}").click()
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait + self.sel.big_wait} сек')
@@ -167,11 +167,11 @@ class TlApplication:
     def setup_indusoft_button(self):
         try:
             sleep(self.sel.random())
-            if self.sel.driver.find_elements(By.CSS_SELECTOR, ".big-loader"):
+            if self.sel.driver.find_elements(By.CSS_SELECTOR, f"{big_loader}"):
                 WebDriverWait(self.sel.driver, self.sel.big_wait).until(
                     EC.invisibility_of_element_located((By.CSS_SELECTOR,
-                                                        ".big-loader")))
-            self.sel.driver.find_element(By.CSS_SELECTOR, "h1.logo").click()
+                                                        f"{big_loader}")))
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_indusoft_button}").click()
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait + self.sel.big_wait} сек')

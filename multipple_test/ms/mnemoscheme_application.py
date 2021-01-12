@@ -223,12 +223,12 @@ class MnemoschemeApplication:
             sleep(self.sel.random())
             # Ожидаем доступность кнопок после Экрана загрузки
             WebDriverWait(self.sel.driver, self.sel.big_wait).until(EC.invisibility_of_element_located((By.CSS_SELECTOR,
-                                                                                                     ".big-loader")))
+                                                                                                        f"{big_loader}")))
             # Нажимаем на кнопку "Список возможностей" в верхнем меню
-            self.sel.driver.find_element(By.CSS_SELECTOR, ".profile").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_profile}").click()
             sleep(self.sel.random())
             # Жмем на кнопку завершить сеанс
-            self.sel.driver.find_element(By.CSS_SELECTOR, "#logoutForm").click()
+            self.sel.driver.find_element(By.CSS_SELECTOR, f"{button_logout}").click()
         except:
             logging.warning(
                 f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait + self.sel.big_wait} сек')

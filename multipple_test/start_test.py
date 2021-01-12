@@ -20,8 +20,8 @@ class Start:
     def run(self):
         dicts = {
             #0: ['start_methods_pmm', self.pmm],
-            0: ['start_methods_tm', self.tm],
-            #2: ['start_methods_tl', self.tl]
+            #1: ['start_methods_tm', self.tm],
+            0: ['start_methods_tl', self.tl]
         }
 
         while True:
@@ -32,8 +32,9 @@ class Start:
 st = Start()
 st.pmm.login()
 #st.tm.test_pmm_vidjet()
+st.tl.test_change_date()
 
-st.run()
+# st.run()
 
 
 
