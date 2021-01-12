@@ -1,3 +1,4 @@
+import os
 from random import randrange
 import logging
 import datetime as dt
@@ -14,6 +15,8 @@ class Start:
         self.tm = TestMnemoscheme(self.drv)
         self.pmm = TestPmm(self.drv)
         self.tl = TestTl(self.drv)
+        self.path = './logs/'
+        os.makedirs(self.path, exist_ok=True)
         self.time = dt.datetime.now().strftime("%d.%m.%Y")
         logging.basicConfig(filename=f'./logs/{self.time}.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%Y %H:%M:%S')
 

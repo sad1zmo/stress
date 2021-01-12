@@ -17,7 +17,7 @@ class SelDrv:
         # self.driver = webdriver.Remote(
         #     command_executor="http://localhost:4444/wd/hub",
         #     desired_capabilities=self.capabilities)
-        self.wait = 30
+        self.wait = 5
         self.big_wait = 120
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()

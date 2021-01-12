@@ -1,3 +1,4 @@
+import os
 import logging
 import datetime as dt
 from ms.crash_test.crash_test_mnemoscheme import CrashTestMnemoscheme
@@ -10,6 +11,8 @@ class Start:
         self.drv = SelDrv()
         self.tm = CrashTestMnemoscheme(self.drv)
         self.time = dt.datetime.now().strftime("%d.%m.%Y")
+        self.path = './logs/crash/mn/'
+        os.makedirs(self.path, exist_ok=True)
         logging.basicConfig(filename=f'./logs/crash/mn/{self.time}.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%Y %H:%M:%S')
 
 
