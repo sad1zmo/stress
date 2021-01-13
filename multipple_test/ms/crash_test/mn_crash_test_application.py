@@ -236,7 +236,9 @@ class CrashMnemoschemeApplication:
                 return
         except:
             logging.warning(
-                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};Элемент не загрузился за {self.sel.wait} сек')
+                f'{self.__class__.__name__};{inspect.stack()[1].function};{inspect.stack()[0].function};\n'
+                f'login_block = {login_block};\nuser_name = {user_name};\nuser_password = {user_password};\n'
+                f'button_login = {button_login}\n')
         finally:
             return
 
