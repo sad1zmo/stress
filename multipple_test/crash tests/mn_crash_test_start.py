@@ -11,9 +11,9 @@ class Start:
         self.drv = SelDrv()
         self.tm = CrashTestMnemoscheme(self.drv)
         self.time = dt.datetime.now().strftime("%d.%m.%Y")
-        self.path = './logs/crash/mn/'
+        self.path = '../../logs/crash/mn/'
         os.makedirs(self.path, exist_ok=True)
-        logging.basicConfig(filename=f'./logs/crash/mn/{self.time}.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%Y %H:%M:%S')
+        logging.basicConfig(filename=f'../../logs/crash/mn/{self.time}.log', format='%(asctime)s;%(message)s', datefmt='%d-%m-%Y %H:%M:%S')
 
 
 st = Start()
@@ -26,18 +26,3 @@ st.tm.test_150Smarttrand()
 st.tm.test_zonemaker()
 st.tm.test_pmm_grid_control()
 st.tm.test_pmm_vidjet()
-
-
-
-
-
-
-
-#st.pmm.test_setup_kvit_events()
-#st.pmm.start_methods_pmm()
-
-"""st.tm.login()
-st.tm.start_methods_mn()
-"""
-
-

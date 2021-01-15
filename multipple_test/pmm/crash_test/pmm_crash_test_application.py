@@ -9,7 +9,8 @@ from driver.css_selectors import *
 import logging
 import inspect
 
-class PmmApplication:
+
+class CrashPmmApplication:
     def __init__(self, driver):
         self.sel = driver
 

@@ -1,5 +1,4 @@
 from ms.crash_test.mn_crash_test_application import CrashMnemoschemeApplication
-from random import randrange
 
 
 class CrashTestMnemoscheme(CrashMnemoschemeApplication):
